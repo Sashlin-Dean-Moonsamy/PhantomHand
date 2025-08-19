@@ -1,0 +1,33 @@
+# Visual Studio Code settings folder
+.vscode/
+
+# Build output folders (optional: if you have build folders in the project)
+Build/
+Builds/
+
+# Unity generated folders
+Library/
+Logs/
+Temp/
+Obj/
+
+# User-specific Unity settings
+UserSettings/
+
+# Auto-generated project files
+*.csproj
+*.sln
+*.user
+*.pidb
+*.booproj
+*.svd
+
+# Unity cache server folder
+Cache/
+
+# Unity crash reports folder
+CrashReports/
+
+# Others
+*.apk
+*.unitypackage
