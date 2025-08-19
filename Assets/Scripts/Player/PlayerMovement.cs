@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         // If the jump button was pressed and Carl is grounded, apply vertical jump velocity
         if (isJumpPressed && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
 
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Apply velocity to Rigidbody (kinematic movement)
-        rb.velocity = new Vector2(moveX, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveX, rb.linearVelocity.y);
 
         // Clear jump flag after applying jump
         isJumpPressed = false;
