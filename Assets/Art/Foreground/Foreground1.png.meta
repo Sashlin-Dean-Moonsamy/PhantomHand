@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: adf3282a0e73d6a49a49cb861d7374d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2371081858261807208
+    second: Background layer 6_0
+  - first:
+      213: 8052200508689400608
+    second: Background layer 6_1
+  - first:
+      213: 99646241153978444
+    second: Background layer 6_2
+  - first:
+      213: -2130236949187514618
+    second: Background layer 6_3
+  - first:
+      213: -5654788186862533079
+    second: Background layer 6_4
+  - first:
+      213: -3655352109649534292
+    second: Background layer 6_5
+  - first:
+      213: -1324912371217549658
+    second: Background layer 6_6
+  - first:
+      213: 4385040435405545524
+    second: Background layer 6_7
+  - first:
+      213: 2507302349601855405
+    second: Background layer 6_8
+  - first:
+      213: 6968338654672990507
+    second: Background layer 6_9
+  - first:
+      213: -1499820103718085982
+    second: Background layer 6_10
+  - first:
+      213: 6465501017228049362
+    second: Background layer 6_11
+  - first:
+      213: -702967299557239992
+    second: Background layer 6_12
+  - first:
+      213: 6096043367181203061
+    second: Background layer 6_13
+  - first:
+      213: 2927433883220001534
+    second: Background layer 6_14
+  - first:
+      213: 2999922859672821852
+    second: Background layer 6_15
+  - first:
+      213: 6210508877331412381
+    second: Background layer 6_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Background layer 6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 863
+        width: 732
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f8ee8cc99381fd0800000000000000
+      internalID: -2371081858261807208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_1
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 883
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 023c6a443b92fbf60800000000000000
+      internalID: 8052200508689400608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_2
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 906
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c409f277ab3026100800000000000000
+      internalID: 99646241153978444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_3
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 904
+        width: 64
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f244cf7c0ef62e0800000000000000
+      internalID: -2130236949187514618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_4
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 882
+        width: 41
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926cbf9ba182681b0800000000000000
+      internalID: -5654788186862533079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_5
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 892
+        width: 36
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca26d578f94954dc0800000000000000
+      internalID: -3655352109649534292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_6
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 878
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a6be03d737fc9de0800000000000000
+      internalID: -1324912371217549658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_7
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 871
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43062160b0bcadc30800000000000000
+      internalID: 4385040435405545524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_8
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 873
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da75584e33abbc220800000000000000
+      internalID: 2507302349601855405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_9
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 861
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b21386a261384b060800000000000000
+      internalID: 6968338654672990507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_10
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 850
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aad4e2ef819f2be0800000000000000
+      internalID: -1499820103718085982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_11
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 800
+        width: 374
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbfdc26be21ab950800000000000000
+      internalID: 6465501017228049362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_12
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 797
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843dc2d27fe8e36f0800000000000000
+      internalID: -702967299557239992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_13
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 797
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576363ce42f799450800000000000000
+      internalID: 6096043367181203061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 799
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef245c84b9550a820800000000000000
+      internalID: 2927433883220001534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 310
+        height: 662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c506f5452fdd1a920800000000000000
+      internalID: 2999922859672821852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background layer 6_16
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 0
+        width: 173
+        height: 561
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95bfb35be8203650800000000000000
+      internalID: 6210508877331412381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Background layer 6_0: -2371081858261807208
+      Background layer 6_1: 8052200508689400608
+      Background layer 6_10: -1499820103718085982
+      Background layer 6_11: 6465501017228049362
+      Background layer 6_12: -702967299557239992
+      Background layer 6_13: 6096043367181203061
+      Background layer 6_14: 2927433883220001534
+      Background layer 6_15: 2999922859672821852
+      Background layer 6_16: 6210508877331412381
+      Background layer 6_2: 99646241153978444
+      Background layer 6_3: -2130236949187514618
+      Background layer 6_4: -5654788186862533079
+      Background layer 6_5: -3655352109649534292
+      Background layer 6_6: -1324912371217549658
+      Background layer 6_7: 4385040435405545524
+      Background layer 6_8: 2507302349601855405
+      Background layer 6_9: 6968338654672990507
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
