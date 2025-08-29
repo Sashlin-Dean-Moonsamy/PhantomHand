@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a10acf708b786334491ef530290c9dd7
+guid: ac723eaab07742943968512402e13493
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4777861783574383369
-    second: street_0
+      213: -2670688235088774638
+    second: Layer 3 Light_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: street_0
+      name: Layer 3 Light_0
       rect:
         serializedVersion: 2
-        x: 355
-        y: 0
-        width: 1565
-        height: 93
+        x: 1078
+        y: 702
+        width: 505
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90b8ddb5aff5e4240800000000000000
-      internalID: 4777861783574383369
+      spriteID: 21af7b9333fcfead0800000000000000
+      internalID: -2670688235088774638
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      street_0: 4777861783574383369
+      Layer 3 Light_0: -2670688235088774638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

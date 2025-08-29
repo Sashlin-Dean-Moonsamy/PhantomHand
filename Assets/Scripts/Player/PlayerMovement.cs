@@ -1,98 +1,82 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Needed for new Input System
+using UnityEngine.InputSystem;
 
-// This script handles Carl's movement using the new Input System.
-// It assumes you have a Rigidbody2D, Animator, and PlayerInput components on the player.
-// Movement is kinematic (we control velocity manually), not physics-based (no AddForce).
-[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
-public class PlayerMovement : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+public class KinematicPlayerInput : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f; // Horizontal movement speed
-    public float jumpForce = 12f; // How high Carl jumps
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    public float gravity = 20f;
+    public LayerMask groundLayer;
 
-    [Header("Crouch Settings")]
-    public float crouchSpeedMultiplier = 0.5f; // Movement is slower when crouching
-
-    [Header("Ground Check Settings")]
-    public Transform groundCheck; // Empty GameObject placed at Carl's feet in the hierarchy
-    public float groundCheckRadius = 0.2f; // Size of the circle that checks for ground
-    public LayerMask groundLayer; // Assign ground tiles to a "Ground" layer in Unity and reference that layer here
-
-    // Private references to components
     private Rigidbody2D rb;
-    private Animator animator;
+    private Collider2D col;
 
-    // Variables to store input state
-    private Vector2 inputMovement;
-    private bool isJumpPressed = false;
-    private bool isCrouching = false;
-    private bool isGrounded = false;
+    private Vector2 inputMove;
+    private Vector2 velocity;
+    private bool isGrounded;
+
+    private InputSystem_Actions inputActions;
 
     void Awake()
     {
-        // Grab components attached to this GameObject
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
+
+        // Instantiate and enable the input actions
+        inputActions = new InputSystem_Actions();
+        inputActions.Player.Enable();
+
+        // Subscribe to jump input
+        inputActions.Player.Jump.performed += OnJump;
+    }
+
+    void OnDestroy()
+    {
+        // Always unsubscribe to avoid memory leaks
+        inputActions.Player.Jump.performed -= OnJump;
     }
 
     void Update()
     {
-        // Ground check: Check if Carl is touching the ground using a tiny circle below his feet
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        // Read movement input
+        inputMove = inputActions.Player.Move.ReadValue<Vector2>();
+        velocity.x = inputMove.x * moveSpeed;
 
-        // Set animation values if an Animator is attached
-        if (animator != null)
-        {
-            animator.SetFloat("Speed", Mathf.Abs(inputMovement.x)); // Used for Idle/Run transitions
-            animator.SetBool("IsJumping", !isGrounded); // Used for Jump state
-            animator.SetBool("IsCrouching", isCrouching); // Used for crouch animations
-        }
+        // Ground check
+        isGrounded = IsGrounded();
 
-        // If the jump button was pressed and Carl is grounded, apply vertical jump velocity
-        if (isJumpPressed && isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
+        // Apply gravity manually (Kinematic body doesn't have built-in gravity)
+        velocity.y -= gravity * Time.deltaTime;
     }
 
     void FixedUpdate()
     {
-        // Calculate horizontal movement
-        float moveX = inputMovement.x * moveSpeed;
-
-        // Slow down movement if crouching
-        if (isCrouching)
-        {
-            moveX *= crouchSpeedMultiplier;
-        }
-
-        // Apply velocity to Rigidbody (kinematic movement)
-        rb.linearVelocity = new Vector2(moveX, rb.linearVelocity.y);
-
-        // Clear jump flag after applying jump
-        isJumpPressed = false;
+        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
     }
 
-    // Called automatically by Input System when the Move action is triggered
-    public void OnMove(InputAction.CallbackContext context)
+    private void OnJump(InputAction.CallbackContext context)
     {
-        inputMovement = context.ReadValue<Vector2>(); // Gets horizontal movement input (-1 to 1)
-    }
-
-    // Called when the Jump action is triggered
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if (context.started)
+        if (isGrounded)
         {
-            isJumpPressed = true; // Set flag to apply jump in Update
+            velocity.y = jumpForce;
         }
     }
 
-    // Called when Crouch action is triggered (button press or axis input)
-    public void OnCrouch(InputAction.CallbackContext context)
+    // Ground detection using box cast
+    private bool IsGrounded()
     {
-        // If value > 0.5, assume crouch is active
-        isCrouching = context.ReadValue<float>() > 0.5f;
+        float extraHeight = 0.05f;
+        RaycastHit2D hit = Physics2D.BoxCast(
+            col.bounds.center,
+            col.bounds.size,
+            0f,
+            Vector2.down,
+            extraHeight,
+            groundLayer
+        );
+
+        return hit.collider != null;
     }
 }
