@@ -116,10 +116,10 @@ TextureImporter:
       name: Run 4_0
       rect:
         serializedVersion: 2
-        x: 189
-        y: 151
-        width: 659
-        height: 813
+        x: 232
+        y: 57
+        width: 653
+        height: 926
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

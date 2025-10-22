@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,3 +41,47 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environnment
+    uniqueID: 3598547015
+    locked: 0
+  - name: Ground
+    uniqueID: 1671957949
+    locked: 0
+  - name: PropsLayer0
+    uniqueID: 315915083
+    locked: 0
+  - name: BuildingLayer1
+    uniqueID: 963322893
+    locked: 0
+  - name: BuildingLayer1Light
+    uniqueID: 540034619
+    locked: 0
+  - name: PropsLayer1
+    uniqueID: 3153002401
+    locked: 0
+  - name: Atmosphere1
+    uniqueID: 2343689391
+    locked: 0
+  - name: BuildingLayer2
+    uniqueID: 3856020517
+    locked: 0
+  - name: BuildingLayer2Light
+    uniqueID: 397351595
+    locked: 0
+  - name: Atmosphere2
+    uniqueID: 2565639339
+    locked: 0
+  - name: PropsLayer2
+    uniqueID: 895497721
+    locked: 0
+  - name: Characters
+    uniqueID: 2521349511
+    locked: 0
+  - name: Foreground
+    uniqueID: 1105812869
+    locked: 0
+  - name: UI
+    uniqueID: 3078091709
+    locked: 0
+  m_RenderingLayers:
+  - Default

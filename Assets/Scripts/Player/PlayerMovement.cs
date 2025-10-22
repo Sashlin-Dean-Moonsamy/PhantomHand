@@ -1,21 +1,24 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
-public class KinematicPlayerInput : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(Animator))]
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
-    public float gravity = 20f;
+    public float jumpForce = 12f;
+    public float gravity = 120f; // Stronger gravity for faster falling
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private Collider2D col;
+    private Animator animator;
 
     private Vector2 inputMove;
     private Vector2 velocity;
     private bool isGrounded;
+    private bool facingRight = false;
+    private bool jumpQueued;
 
     private InputSystem_Actions inputActions;
 
@@ -23,18 +26,18 @@ public class KinematicPlayerInput : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
 
-        // Instantiate and enable the input actions
+        rb.bodyType = RigidbodyType2D.Kinematic;
+
         inputActions = new InputSystem_Actions();
         inputActions.Player.Enable();
 
-        // Subscribe to jump input
         inputActions.Player.Jump.performed += OnJump;
     }
 
     void OnDestroy()
     {
-        // Always unsubscribe to avoid memory leaks
         inputActions.Player.Jump.performed -= OnJump;
     }
 
@@ -42,29 +45,55 @@ public class KinematicPlayerInput : MonoBehaviour
     {
         // Read movement input
         inputMove = inputActions.Player.Move.ReadValue<Vector2>();
-        velocity.x = inputMove.x * moveSpeed;
 
-        // Ground check
+        // Check ground contact
+        bool wasGrounded = isGrounded;
         isGrounded = IsGrounded();
 
-        // Apply gravity manually (Kinematic body doesn't have built-in gravity)
-        velocity.y -= gravity * Time.deltaTime;
+        // Handle jump input when grounded
+        if (jumpQueued && isGrounded)
+        {
+            velocity.y = jumpForce;
+            jumpQueued = false;
+            isGrounded = false; // Immediately set to false on jump
+            animator.SetTrigger("Jump");
+        }
+
+        // Apply gravity when airborne
+        if (!isGrounded)
+        {
+            velocity.y -= gravity * Time.deltaTime;
+            if (velocity.y < -40f)
+                velocity.y = -40f;
+        }
+        else if (velocity.y < 0)
+        {
+            velocity.y = 0f;
+        }
+
+        // Horizontal movement
+        velocity.x = inputMove.x * moveSpeed;
+
+        // Flip sprite based on movement direction
+        if (velocity.x > 0.1f && !facingRight) Flip();
+        else if (velocity.x < -0.1f && facingRight) Flip();
+
+        // Update animator parameters
+        UpdateAnimator(wasGrounded);
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        // Move player based on calculated velocity
+        Vector2 nextPos = rb.position + velocity * Time.fixedDeltaTime;
+        rb.MovePosition(nextPos);
     }
 
-    private void OnJump(InputAction.CallbackContext context)
+    private void OnJump(InputAction.CallbackContext ctx)
     {
-        if (isGrounded)
-        {
-            velocity.y = jumpForce;
-        }
+        jumpQueued = true;
     }
 
-    // Ground detection using box cast
     private bool IsGrounded()
     {
         float extraHeight = 0.05f;
@@ -76,7 +105,38 @@ public class KinematicPlayerInput : MonoBehaviour
             extraHeight,
             groundLayer
         );
-
         return hit.collider != null;
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
+    private void UpdateAnimator(bool wasGrounded)
+    {
+        if (!animator) return;
+
+        animator.SetFloat("Speed", Mathf.Abs(velocity.x));
+        animator.SetFloat("yVelocity", velocity.y);
+
+        // Instantly reflect airborne state in animator
+        animator.SetBool("isGrounded", isGrounded);
+
+        // Optional: Add landing trigger when falling -> grounded
+        if (!wasGrounded && isGrounded)
+        {
+            animator.SetTrigger("Land");
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (col == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(col.bounds.center + Vector3.down * 0.05f, col.bounds.size);
     }
 }
