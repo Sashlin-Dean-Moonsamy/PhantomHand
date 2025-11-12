@@ -34,12 +34,12 @@ Transform:
   - {fileID: 3573481067120977221}
   - {fileID: 2606815854552716623}
   - {fileID: 5708637009252638613}
-  - {fileID: 8495432147676741288}
   - {fileID: 855513457908662262}
   - {fileID: 7713522413622904764}
   - {fileID: 8971777318000571958}
   - {fileID: 3222346351882736275}
   - {fileID: 3201198851174271755}
+  - {fileID: 6221011489297048390}
   m_Father: {fileID: 5580822008561357071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1345704679378864836
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4509802848579604072
@@ -579,6 +579,38 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.01, y: 9.37}
   m_EdgeRadius: 0
+--- !u!1 &4792514356907117168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6221011489297048390}
+  m_Layer: 0
+  m_Name: Railings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6221011489297048390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4792514356907117168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8495432147676741288}
+  m_Father: {fileID: 1638572026936183544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5308739274791670104
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +1008,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1638572026936183544}
+    m_TransformParent: {fileID: 6221011489297048390}
     m_Modifications:
     - target: {fileID: 3566484055308386793, guid: c4c4214ba35b65a44b6073f78a675b63, type: 3}
       propertyPath: m_Name

@@ -77,6 +77,9 @@ TagManager:
   - name: Characters
     uniqueID: 2521349511
     locked: 0
+  - name: Prop After Char
+    uniqueID: 2240070229
+    locked: 0
   - name: Foreground
     uniqueID: 1105812869
     locked: 0

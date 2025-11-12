@@ -6,8 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
-    public float jumpForce = 12f;
-    public float gravity = 120f; // Stronger gravity for faster falling
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -18,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
     private bool isGrounded;
     private bool facingRight = false;
-    private bool jumpQueued;
 
     private InputSystem_Actions inputActions;
 
@@ -32,66 +29,35 @@ public class PlayerMovement : MonoBehaviour
 
         inputActions = new InputSystem_Actions();
         inputActions.Player.Enable();
-
-        inputActions.Player.Jump.performed += OnJump;
-    }
-
-    void OnDestroy()
-    {
-        inputActions.Player.Jump.performed -= OnJump;
     }
 
     void Update()
     {
-        // Read movement input
+        // Read horizontal input
         inputMove = inputActions.Player.Move.ReadValue<Vector2>();
 
-        // Check ground contact
+        // Ground check (for animation purposes)
         bool wasGrounded = isGrounded;
         isGrounded = IsGrounded();
-
-        // Handle jump input when grounded
-        if (jumpQueued && isGrounded)
-        {
-            velocity.y = jumpForce;
-            jumpQueued = false;
-            isGrounded = false; // Immediately set to false on jump
-            animator.SetTrigger("Jump");
-        }
-
-        // Apply gravity when airborne
-        if (!isGrounded)
-        {
-            velocity.y -= gravity * Time.deltaTime;
-            if (velocity.y < -40f)
-                velocity.y = -40f;
-        }
-        else if (velocity.y < 0)
-        {
-            velocity.y = 0f;
-        }
 
         // Horizontal movement
         velocity.x = inputMove.x * moveSpeed;
 
-        // Flip sprite based on movement direction
-        if (velocity.x > 0.1f && !facingRight) Flip();
-        else if (velocity.x < -0.1f && facingRight) Flip();
+        // Flip sprite direction
+        if (velocity.x > 0.1f && !facingRight)
+            Flip();
+        else if (velocity.x < -0.1f && facingRight)
+            Flip();
 
-        // Update animator parameters
+        // Update animations
         UpdateAnimator(wasGrounded);
     }
 
     void FixedUpdate()
     {
-        // Move player based on calculated velocity
+        // Move the player kinematically
         Vector2 nextPos = rb.position + velocity * Time.fixedDeltaTime;
         rb.MovePosition(nextPos);
-    }
-
-    private void OnJump(InputAction.CallbackContext ctx)
-    {
-        jumpQueued = true;
     }
 
     private bool IsGrounded()
@@ -105,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             extraHeight,
             groundLayer
         );
+
         return hit.collider != null;
     }
 
@@ -121,21 +88,13 @@ public class PlayerMovement : MonoBehaviour
         if (!animator) return;
 
         animator.SetFloat("Speed", Mathf.Abs(velocity.x));
-        animator.SetFloat("yVelocity", velocity.y);
-
-        // Instantly reflect airborne state in animator
         animator.SetBool("isGrounded", isGrounded);
-
-        // Optional: Add landing trigger when falling -> grounded
-        if (!wasGrounded && isGrounded)
-        {
-            animator.SetTrigger("Land");
-        }
     }
 
     void OnDrawGizmos()
     {
         if (col == null) return;
+
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(col.bounds.center + Vector3.down * 0.05f, col.bounds.size);
     }
