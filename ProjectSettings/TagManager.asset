@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ground
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Assets
   - 
   - 
   - 
@@ -43,9 +43,6 @@ TagManager:
     locked: 0
   - name: Environnment
     uniqueID: 3598547015
-    locked: 0
-  - name: Ground
-    uniqueID: 1671957949
     locked: 0
   - name: PropsLayer0
     uniqueID: 315915083
@@ -82,6 +79,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1105812869
+    locked: 0
+  - name: Ground & Railing
+    uniqueID: 1671957949
     locked: 0
   - name: UI
     uniqueID: 3078091709
