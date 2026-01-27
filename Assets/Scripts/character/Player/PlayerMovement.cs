@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
@@ -7,9 +8,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
 
+    [Header("Jump Settings")]
+    public float jumpForce = 12f;
+
     [Header("Gravity Settings")]
-    public float gravity = -35f;        // How fast player accelerates downward
-    public float maxFallSpeed = -20f;   // Terminal velocity
+    public float gravity = -35f;
+    public float maxFallSpeed = -20f;
+
+    [Header("Dash Settings")]
+    public float dashDistance = 3f;
+    public float dashDuration = 0.12f;
+    public float dashCooldown = 0.5f;
 
     [Header("Ground Check")]
     public LayerMask groundLayer;
@@ -20,10 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 inputMove;
     private Vector2 velocity;
+
     private bool isGrounded;
     private bool facingRight = false;
+    private bool isDashing;
 
-    private float verticalVelocity = 0f;  // Manual gravity
+    private float verticalVelocity = 0f;
+    private float lastDashTime;
 
     private InputSystem_Actions inputActions;
 
@@ -41,47 +53,65 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Read movement input (X axis)
+        // ---------------- INPUT ----------------
         inputMove = inputActions.Player.Move.ReadValue<Vector2>();
+        bool jumpPressed = inputActions.Player.Jump.WasPressedThisFrame();
+        bool dashPressed = inputActions.Player.Dash.WasPressedThisFrame();
 
         bool wasGrounded = isGrounded;
         isGrounded = IsGrounded();
 
-        // Horizontal velocity
-        velocity.x = inputMove.x * moveSpeed;
+        // ---------------- JUMP ----------------
+        if (jumpPressed && isGrounded)
+        {
+            verticalVelocity = jumpForce;
+            isGrounded = false;
+            animator.SetTrigger("Jump");
+        }
 
-        // Apply manual gravity if NOT grounded
-        if (!isGrounded)
+        // ---------------- DASH ----------------
+        if (dashPressed && !isDashing && Time.time - lastDashTime > dashCooldown)
+        {
+            float dir = facingRight ? 1f : -1f;
+            StartCoroutine(DashRoutine(dir));
+        }
+
+        // ---------------- HORIZONTAL ----------------
+        if (!isDashing)
+            velocity.x = inputMove.x * moveSpeed;
+
+        // ---------------- GRAVITY ----------------
+        if (!isGrounded && !isDashing)
         {
             verticalVelocity -= gravity * Time.deltaTime;
             verticalVelocity = Mathf.Max(verticalVelocity, maxFallSpeed);
         }
-        else
+        else if (isGrounded && verticalVelocity < 0f)
         {
-            verticalVelocity = 0f; // reset when standing on ground
+            verticalVelocity = 0f;
         }
 
-        // Flip sprite
+        // ---------------- FLIP ----------------
         if (velocity.x > 0.1f && !facingRight)
             Flip();
         else if (velocity.x < -0.1f && facingRight)
             Flip();
 
-        UpdateAnimator(wasGrounded);
+        // ---------------- ANIMATOR ----------------
+        animator.SetFloat("Speed", Mathf.Abs(velocity.x));
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     void FixedUpdate()
     {
+        if (isDashing) return;
+
         Vector2 nextPos = rb.position;
-
-        // Apply horizontal movement
         nextPos.x += velocity.x * Time.fixedDeltaTime;
-
-        // Apply gravity movement
         nextPos.y += verticalVelocity * Time.fixedDeltaTime;
 
-        // Ground snapping if falling into ground
-        if (verticalVelocity <= 0f) // only when moving down
+        // --------- Ground Snap ---------
+        if (verticalVelocity <= 0f)
         {
             RaycastHit2D hit = Physics2D.BoxCast(
                 col.bounds.center,
@@ -94,9 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (hit.collider != null)
             {
-                // Snap perfectly on top of ground
                 nextPos.y = hit.point.y + col.bounds.extents.y;
-
                 verticalVelocity = 0f;
                 isGrounded = true;
             }
@@ -104,6 +132,29 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(nextPos);
     }
+
+    // ---------------- DASH ROUTINE ----------------
+
+    IEnumerator DashRoutine(float dir)
+    {
+        isDashing = true;
+        lastDashTime = Time.time;
+        animator.SetTrigger("Dash");
+
+        float speed = dashDistance / dashDuration;
+        float timer = 0f;
+
+        while (timer < dashDuration)
+        {
+            rb.MovePosition(rb.position + Vector2.right * dir * speed * Time.fixedDeltaTime);
+            timer += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+
+        isDashing = false;
+    }
+
+    // ---------------- GROUND CHECK ----------------
 
     private bool IsGrounded()
     {
@@ -121,6 +172,8 @@ public class PlayerMovement : MonoBehaviour
         return hit.collider != null;
     }
 
+    // ---------------- FLIP ----------------
+
     private void Flip()
     {
         facingRight = !facingRight;
@@ -129,19 +182,16 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = scale;
     }
 
-    private void UpdateAnimator(bool wasGrounded)
-    {
-        if (!animator) return;
-
-        animator.SetFloat("Speed", Mathf.Abs(velocity.x));
-        animator.SetBool("isGrounded", isGrounded);
-    }
+    // ---------------- DEBUG ----------------
 
     void OnDrawGizmos()
     {
         if (col == null) return;
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(col.bounds.center + Vector3.down * 0.05f, col.bounds.size);
+        Gizmos.DrawWireCube(
+            col.bounds.center + Vector3.down * 0.05f,
+            col.bounds.size
+        );
     }
 }

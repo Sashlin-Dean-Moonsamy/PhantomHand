@@ -12,6 +12,7 @@ public class CameraFollow : MonoBehaviour
     public float raycastDistance = 20f; // How far down to check for ground
     public float cameraHeightBuffer = 2f; // Keep camera this far above ground
 
+  
     private void LateUpdate()
     {
         if (!target) return;
@@ -19,7 +20,7 @@ public class CameraFollow : MonoBehaviour
         // 1️⃣ Desired position based on player
         Vector3 desired = new Vector3(
             target.position.x + offset.x,
-            target.position.y + offset.y,
+            target.position.y,
             transform.position.z
         );
 
