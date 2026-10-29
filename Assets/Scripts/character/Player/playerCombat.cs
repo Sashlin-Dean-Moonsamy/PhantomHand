@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -12,15 +11,10 @@ public class PlayerCombat : MonoBehaviour
     [Header("Weapon")]
     [SerializeField] private Animator weaponAnimator;
 
-    [Header("Slap Frame Sampling")]
-    [Tooltip("Clip containing the player and weapon sprite animation.")]
-    [SerializeField] private AnimationClip slapClip;
-
-    [Tooltip("GameObject whose hierarchy contains the player sprite.")]
-    [SerializeField] private GameObject playerAnimationTarget;
-
-    [Tooltip("GameObject whose hierarchy contains the weapon sprite.")]
-    [SerializeField] private GameObject weaponAnimationTarget;
+    [Header("Light Attack Combo")]
+    [SerializeField] private string slapIndexParameter = "SlapIndex";
+    [SerializeField] private string lightAttackTrigger = "LightAttack";
+    [SerializeField, Min(1)] private int slapCount = 4;
 
     [Header("Combat Timing")]
     [SerializeField] private float actionCooldown = 0.1f;
@@ -32,13 +26,13 @@ public class PlayerCombat : MonoBehaviour
     private InputSystem_Actions inputActions;
 
     private float lastActionTime;
+    private int nextSlapIndex;
 
     private bool actionLocked;
     private bool dead;
 
-    private int slapFrameIndex;
-    private int slapTotalFrames;
-    private float slapFrameRate;
+    private int slapIndexHash;
+    private int lightAttackHash;
 
     private void Awake()
     {
@@ -50,32 +44,26 @@ public class PlayerCombat : MonoBehaviour
         if (playerHitbox == null)
             playerHitbox = GetComponentInChildren<PlayerHitbox>();
 
-        if (playerAnimationTarget == null)
-            playerAnimationTarget = gameObject;
-
-        if (weaponAnimationTarget == null && weaponAnimator != null)
-            weaponAnimationTarget = weaponAnimator.gameObject;
-
         inputActions = new InputSystem_Actions();
 
+        slapIndexHash = Animator.StringToHash(slapIndexParameter);
+        lightAttackHash = Animator.StringToHash(lightAttackTrigger);
+
         if (weaponAnimator == null)
-            Debug.LogWarning("PlayerCombat: Weapon Animator is not assigned.");
+            Debug.LogWarning(
+                "PlayerCombat: Weapon Animator is not assigned. " +
+                "Player attacks will still work.");
 
         if (playerHitbox == null)
-            Debug.LogWarning("PlayerCombat: PlayerHitbox was not found.");
+            Debug.LogWarning(
+                "PlayerCombat: PlayerHitbox was not found.");
 
-        if (slapClip != null)
+        if (!playerAnimator.HasParameterOfType(
+                slapIndexHash, AnimatorControllerParameterType.Int))
         {
-            slapFrameRate = slapClip.frameRate;
-
-            slapTotalFrames = Mathf.Max(
-                1,
-                Mathf.RoundToInt(slapClip.length * slapFrameRate)
-            );
-        }
-        else
-        {
-            Debug.LogWarning("PlayerCombat: Slap clip is not assigned.");
+            Debug.LogWarning(
+                "PlayerCombat: Add an Int parameter named '" +
+                slapIndexParameter + "' to the player Animator.");
         }
     }
 
@@ -90,7 +78,10 @@ public class PlayerCombat : MonoBehaviour
         if (inputActions != null)
             inputActions.Disable();
 
+        DisableHitbox();
+        EndParry();
         RestoreAnimators();
+        SetActionLocked(false);
     }
 
     private void Update()
@@ -154,55 +145,37 @@ public class PlayerCombat : MonoBehaviour
     }
 
     // =========================================================
-    // LIGHT ATTACK
+    // LIGHT ATTACK COMBO
     // =========================================================
 
     private void LightAttack()
     {
-        if (dead || slapClip == null)
+        if (dead)
+            return;
+
+        if (slapCount < 1)
             return;
 
         DisableHitbox();
+        EndParry();
 
-        // Stop normal Animator playback before sampling.
-        playerAnimator.enabled = false;
+        RestoreAnimators();
 
-        if (weaponAnimator != null)
-            weaponAnimator.enabled = false;
+        // Select the current slap pose.
+        playerAnimator.SetInteger(
+            slapIndexHash, nextSlapIndex);
 
-        // Sample both hierarchies at exactly the same time.
-        PlayNextSlapFrame();
+        // Request the matching Animator transition.
+        playerAnimator.ResetTrigger(lightAttackHash);
+        playerAnimator.SetTrigger(lightAttackHash);
+
+        // Advance the combo and wrap back to the first slap.
+        nextSlapIndex = (nextSlapIndex + 1) % slapCount;
 
         lastActionTime = Time.time;
 
         if (lockMovementDuringAttacks)
             SetActionLocked(true);
-    }
-
-    private void PlayNextSlapFrame()
-    {
-        if (slapFrameRate <= 0f || slapTotalFrames <= 0)
-            return;
-
-        float sampleTime = slapFrameIndex / slapFrameRate;
-
-        if (playerAnimationTarget != null)
-        {
-            slapClip.SampleAnimation(
-                playerAnimationTarget,
-                sampleTime
-            );
-        }
-
-        if (weaponAnimationTarget != null)
-        {
-            slapClip.SampleAnimation(
-                weaponAnimationTarget,
-                sampleTime
-            );
-        }
-
-        slapFrameIndex = (slapFrameIndex + 1) % slapTotalFrames;
     }
 
     // =========================================================
@@ -229,14 +202,15 @@ public class PlayerCombat : MonoBehaviour
         TriggerAttack("Parry", "Parry");
     }
 
-    private void TriggerAttack(string playerTrigger, string weaponTrigger)
+    private void TriggerAttack(
+        string playerTrigger, string weaponTrigger)
     {
         if (dead)
             return;
 
         DisableHitbox();
+        EndParry();
 
-        // Restore regular animation playback for normal attacks.
         RestoreAnimators();
 
         playerAnimator.ResetTrigger(playerTrigger);
@@ -252,15 +226,6 @@ public class PlayerCombat : MonoBehaviour
 
         if (lockMovementDuringAttacks)
             SetActionLocked(true);
-    }
-
-    private void RestoreAnimators()
-    {
-        if (playerAnimator != null)
-            playerAnimator.enabled = true;
-
-        if (weaponAnimator != null)
-            weaponAnimator.enabled = true;
     }
 
     // =========================================================
@@ -334,6 +299,15 @@ public class PlayerCombat : MonoBehaviour
             playerMovement.SetMovementLocked(locked);
     }
 
+    private void RestoreAnimators()
+    {
+        if (playerAnimator != null)
+            playerAnimator.enabled = true;
+
+        if (weaponAnimator != null)
+            weaponAnimator.enabled = true;
+    }
+
     // =========================================================
     // DEATH
     // =========================================================
@@ -349,9 +323,7 @@ public class PlayerCombat : MonoBehaviour
         EndParry();
 
         RestoreAnimators();
-
-        if (playerMovement != null)
-            playerMovement.SetMovementLocked(true);
+        SetActionLocked(true);
 
         playerAnimator.ResetTrigger("Death");
         playerAnimator.SetTrigger("Death");
@@ -369,5 +341,33 @@ public class PlayerCombat : MonoBehaviour
     public bool IsActionLocked()
     {
         return actionLocked;
+    }
+}
+
+// =============================================================
+// ANIMATOR PARAMETER VALIDATION
+// =============================================================
+
+public static class AnimatorParameterExtensions
+{
+    public static bool HasParameterOfType(
+        this Animator animator,
+        int parameterHash,
+        AnimatorControllerParameterType type)
+    {
+        if (animator == null || animator.runtimeAnimatorController == null)
+            return false;
+
+        foreach (AnimatorControllerParameter parameter
+                 in animator.parameters)
+        {
+            if (parameter.nameHash == parameterHash &&
+                parameter.type == type)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
