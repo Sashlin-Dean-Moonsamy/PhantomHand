@@ -5,9 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BossFight.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 0
+    path: Assets/Scenes/Level_01.unity
+    guid: 791ace4cf53539f48aac70eb8526f84c
+  - enabled: 1
+    path: Assets/Scenes/Bootloader.unity
+    guid: e0608c5d57d0bcb47a72238d804c5bfc
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 957786264e43f2541a1560c7f1c4cd71
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: 066c62177f0f30942a3849efd405e26b
+  - enabled: 1
+    path: Assets/Scenes/CrabShack.unity
+    guid: 764255cd940893a48bcd0af9746da9c2
+  - enabled: 1
+    path: Assets/Scenes/Tower.unity
+    guid: 351edca11c480a14f859a37365de58d7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

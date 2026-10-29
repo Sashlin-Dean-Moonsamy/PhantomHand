@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 178a84c10749fda438351046a5f434f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3149355813270460198
+    second: coffee shop lights_0
+  - first:
+      213: 6257812805722399899
+    second: coffee shop lights_1
+  - first:
+      213: -4123344377324516629
+    second: coffee shop lights_2
+  - first:
+      213: 3018225883934538616
+    second: coffee shop lights_3
+  - first:
+      213: 7088354826642165076
+    second: coffee shop lights_4
+  - first:
+      213: -4557751216747453710
+    second: coffee shop lights_5
+  - first:
+      213: 4031530558237844630
+    second: coffee shop lights_6
+  - first:
+      213: 4331253055659948667
+    second: coffee shop lights_7
+  - first:
+      213: -64618770423012098
+    second: coffee shop lights_8
+  - first:
+      213: -8257571753237027576
+    second: coffee shop lights_9
+  - first:
+      213: 7469250105134284742
+    second: coffee shop lights_10
+  - first:
+      213: 7827801672866636937
+    second: coffee shop lights_11
+  - first:
+      213: -4744964716185273211
+    second: coffee shop lights_12
+  - first:
+      213: 4254123513782725901
+    second: coffee shop lights_13
+  - first:
+      213: 1056605085698950785
+    second: coffee shop lights_14
+  - first:
+      213: 4356478955774341242
+    second: coffee shop lights_15
+  - first:
+      213: 2862952438554358162
+    second: coffee shop lights_16
+  - first:
+      213: -6903306227105859861
+    second: coffee shop lights_17
+  - first:
+      213: 8812037601548977772
+    second: coffee shop lights_18
+  - first:
+      213: -6000317061118815819
+    second: coffee shop lights_19
+  - first:
+      213: -5145649734367248496
+    second: coffee shop lights_20
+  - first:
+      213: 4834968911864461178
+    second: coffee shop lights_21
+  - first:
+      213: 8330543515450396279
+    second: coffee shop lights_22
+  - first:
+      213: 1360060864418542354
+    second: coffee shop lights_23
+  - first:
+      213: -8621100257270167299
+    second: coffee shop lights_24
+  - first:
+      213: -6785449612263211476
+    second: coffee shop lights_25
+  - first:
+      213: 990088971007225496
+    second: coffee shop lights_26
+  - first:
+      213: 7124641160526000016
+    second: coffee shop lights_27
+  - first:
+      213: -1792170652783156079
+    second: coffee shop lights_28
+  - first:
+      213: -7381088924149464030
+    second: coffee shop lights_29
+  - first:
+      213: 4389101138156393293
+    second: coffee shop lights_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coffee shop lights_0
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 735
+        width: 17
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6271c491d62c4bb20800000000000000
+      internalID: 3149355813270460198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_1
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 740
+        width: 24
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9469fb679738d650800000000000000
+      internalID: 6257812805722399899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_2
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 808
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beac7fe9220f6c6c0800000000000000
+      internalID: -4123344377324516629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_3
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 789
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87bbecf3374e2e920800000000000000
+      internalID: 3018225883934538616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_4
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 732
+        width: 29
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d8eebb825ee5260800000000000000
+      internalID: 7088354826642165076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_5
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 721
+        width: 51
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2e9279a6d9fb0c0800000000000000
+      internalID: -4557751216747453710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_6
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 726
+        width: 33
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69426e8ceafd2f730800000000000000
+      internalID: 4031530558237844630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_7
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 725
+        width: 29
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7abfe6c4b3bb1c30800000000000000
+      internalID: 4331253055659948667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_8
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 731
+        width: 27
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef42d17129d6a1ff0800000000000000
+      internalID: -64618770423012098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_9
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 728
+        width: 12
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805e10dad36376d80800000000000000
+      internalID: -8257571753237027576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_10
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 732
+        width: 23
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cff317956b18a760800000000000000
+      internalID: 7469250105134284742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_11
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 698
+        width: 28
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984ac63e520f1ac60800000000000000
+      internalID: 7827801672866636937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_12
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 729
+        width: 23
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cb3040bbf762eb0800000000000000
+      internalID: -4744964716185273211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_13
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 727
+        width: 24
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0de7a5ebcea90b30800000000000000
+      internalID: 4254123513782725901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_14
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 729
+        width: 25
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18605f03ab0d9ae00800000000000000
+      internalID: 1056605085698950785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_15
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 730
+        width: 25
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70f4665782557c30800000000000000
+      internalID: 4356478955774341242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_16
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 726
+        width: 24
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291fed403104bb720800000000000000
+      internalID: 2862952438554358162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_17
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 695
+        width: 14
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6fc9dcf878230a0800000000000000
+      internalID: -6903306227105859861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_18
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 734
+        width: 20
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6646bba285aa4a70800000000000000
+      internalID: 8812037601548977772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_19
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 730
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b11c488c679abca0800000000000000
+      internalID: -6000317061118815819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_20
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 723
+        width: 53
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ff47454daf698b0800000000000000
+      internalID: -5145649734367248496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_21
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 710
+        width: 31
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77fcbbcb92491340800000000000000
+      internalID: 4834968911864461178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_22
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 718
+        width: 41
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77eca50b0390c9370800000000000000
+      internalID: 8330543515450396279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_23
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 409
+        width: 184
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 213f3987628efd210800000000000000
+      internalID: 1360060864418542354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_24
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 409
+        width: 181
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df802681ef2bb5880800000000000000
+      internalID: -8621100257270167299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_25
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 397
+        width: 184
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e3dbb478d35d1a0800000000000000
+      internalID: -6785449612263211476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_26
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 202
+        width: 401
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89eeae46ca08dbd00800000000000000
+      internalID: 990088971007225496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_27
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 212
+        width: 94
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f6745336fcfd260800000000000000
+      internalID: 7124641160526000016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_28
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 226
+        width: 90
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194eaff594ee027e0800000000000000
+      internalID: -1792170652783156079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_29
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 227
+        width: 49
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224408ceaba119990800000000000000
+      internalID: -7381088924149464030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee shop lights_30
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 165
+        width: 310
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43131f0b3839ec30800000000000000
+      internalID: 4389101138156393293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      coffee shop lights_0: 3149355813270460198
+      coffee shop lights_1: 6257812805722399899
+      coffee shop lights_10: 7469250105134284742
+      coffee shop lights_11: 7827801672866636937
+      coffee shop lights_12: -4744964716185273211
+      coffee shop lights_13: 4254123513782725901
+      coffee shop lights_14: 1056605085698950785
+      coffee shop lights_15: 4356478955774341242
+      coffee shop lights_16: 2862952438554358162
+      coffee shop lights_17: -6903306227105859861
+      coffee shop lights_18: 8812037601548977772
+      coffee shop lights_19: -6000317061118815819
+      coffee shop lights_2: -4123344377324516629
+      coffee shop lights_20: -5145649734367248496
+      coffee shop lights_21: 4834968911864461178
+      coffee shop lights_22: 8330543515450396279
+      coffee shop lights_23: 1360060864418542354
+      coffee shop lights_24: -8621100257270167299
+      coffee shop lights_25: -6785449612263211476
+      coffee shop lights_26: 990088971007225496
+      coffee shop lights_27: 7124641160526000016
+      coffee shop lights_28: -1792170652783156079
+      coffee shop lights_29: -7381088924149464030
+      coffee shop lights_3: 3018225883934538616
+      coffee shop lights_30: 4389101138156393293
+      coffee shop lights_4: 7088354826642165076
+      coffee shop lights_5: -4557751216747453710
+      coffee shop lights_6: 4031530558237844630
+      coffee shop lights_7: 4331253055659948667
+      coffee shop lights_8: -64618770423012098
+      coffee shop lights_9: -8257571753237027576
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

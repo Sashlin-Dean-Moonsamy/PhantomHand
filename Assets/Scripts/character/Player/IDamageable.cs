@@ -1,0 +1,11 @@
+using UnityEngine;
+
+public interface IDamageable
+{
+    void TakeDamage(
+        float damage,
+        Vector2 hitDirection,
+        float knockback,
+        PlayerAttackType attackType
+    );
+}

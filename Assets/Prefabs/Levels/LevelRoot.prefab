@@ -623,9 +623,7 @@ GameObject:
   - component: {fileID: 7169528368428152412}
   - component: {fileID: 7502017389233026397}
   - component: {fileID: 7579360828410026987}
-  - component: {fileID: 2692000063911431520}
   - component: {fileID: 836888399562839947}
-  - component: {fileID: 5082693080651915729}
   - component: {fileID: 1487321654387728634}
   m_Layer: 0
   m_Name: Player
@@ -730,22 +728,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &2692000063911431520
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4592554732703107199}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 6ef735b79571a1f48aa86cb8c9da6fbb, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!50 &836888399562839947
 Rigidbody2D:
   serializedVersion: 5
@@ -756,7 +738,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 4592554732703107199}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -773,25 +755,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5082693080651915729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4592554732703107199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9c320a7b00aed439cd3302225f962d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
-  jumpForce: 12
-  gravity: 20
-  maxFallSpeed: -20
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!61 &1487321654387728634
 BoxCollider2D:
   m_ObjectHideFlags: 0

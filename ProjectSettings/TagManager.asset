@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Assets
-  - 
+  - Railing
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
     locked: 0
   - name: Environnment
     uniqueID: 3598547015
+    locked: 0
+  - name: background buldings
+    uniqueID: 1649887891
+    locked: 0
+  - name: background tree
+    uniqueID: 494025067
     locked: 0
   - name: PropsLayer0
     uniqueID: 315915083
@@ -76,6 +82,9 @@ TagManager:
     locked: 0
   - name: Prop After Char
     uniqueID: 2240070229
+    locked: 0
+  - name: Midground
+    uniqueID: 1969509435
     locked: 0
   - name: Foreground
     uniqueID: 1105812869
